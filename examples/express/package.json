@@ -1,0 +1,19 @@
+{
+  "name": "plugin",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+    "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Kevin Malakoff",
+  "license": "MIT",
+  "dependencies": {
+    "esbuild": "^0.14.43",
+    "express": "^4.18.1",
+    "open": "^8.4.0",
+    "react": "^18.1.0",
+    "react-dev-utils": "^12.0.1",
+    "react-dom": "^18.1.0"
+  }
+}

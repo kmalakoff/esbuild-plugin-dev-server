@@ -1,0 +1,7 @@
+.github/
+.vscode/
+examples/
+.eslintignore
+.eslintrc.json
+.prettierignore
+.prettierrc.json
