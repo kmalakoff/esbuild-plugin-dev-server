@@ -1,31 +1,7 @@
 {
   "name": "esbuild-plugin-dev-server",
+  "version": "1.1.0",
   "description": "Dev server for esbuild with live reload and error overlay",
-  "version": "1.0.0",
-  "author": {
-    "email": "kmalakoff@gmail.com",
-    "name": "Kevin Malakoff",
-    "url": "https://github.com/kmalakoff"
-  },
-  "license": "MIT",
-  "main": "index.js",
-  "files": [
-    "index.js",
-    "client.js",
-    "lib"
-  ],
-  "scripts": {
-    "format": "prettier --write .",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
-  },
-  "homepage": "https://github.com/kmalakoff/esbuild-plugin-dev-server#README.md",
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/kmalakoff/esbuild-plugin-dev-server.git"
-  },
-  "bugs": {
-    "url": "https://github.com/kmalakoff/esbuild-plugin-dev-server/issues"
-  },
   "keywords": [
     "dev",
     "server",
@@ -34,20 +10,47 @@
     "overlay",
     "live",
     "reload",
+    "react",
     "typescript"
   ],
-  "devDependencies": {
-    "@typescript-eslint/parser": "^5.28.0",
-    "eslint": "^8.17.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "prettier": "^2.7.0"
+  "homepage": "https://github.com/kmalakoff/esbuild-plugin-dev-server#README.md",
+  "license": "MIT",
+  "author": "Kevin Malakoff <kmalakoff@gmail.com> (https://github.com/kmalakoff)",
+  "files": [
+    "index.js",
+    "client.js",
+    "src"
+  ],
+  "main": "index.js",
+  "repository": "kmalakoff/esbuild-plugin-dev-server",
+  "scripts": {
+    "format": "prettier --write .",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "test": "mocha test/spec/*.test.js --timeout=10000",
+    "test:engines": "nvu engines npm test"
   },
   "dependencies": {
     "react-dev-utils": "^12.0.1",
     "serve-handler": "^6.1.3",
     "sockjs": "^0.3.24"
   },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.28.0",
+    "@typescript-eslint/parser": "^5.28.0",
+    "esbuild": "^0.14.45",
+    "eslint": "^8.17.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-react": "^7.30.0",
+    "fs-extra": "^10.1.0",
+    "http-terminator": "^3.2.0",
+    "mocha": "^10.0.0",
+    "node-version-use": "^0.2.0",
+    "playwright": "^1.22.2",
+    "prettier": "^2.7.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
   "engines": {
-    "node": ">=4"
+    "node": ">=12"
   }
 }
