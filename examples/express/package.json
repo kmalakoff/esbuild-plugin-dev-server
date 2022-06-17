@@ -1,13 +1,12 @@
 {
-  "name": "plugin",
+  "name": "express",
   "version": "1.0.0",
   "description": "",
-  "type": "module",
-    "scripts": {
-    "start": "node server.js"
-  },
-  "author": "Kevin Malakoff",
   "license": "MIT",
+  "author": "Kevin Malakoff",
+  "scripts": {
+    "start": "node server.mjs"
+  },
   "dependencies": {
     "esbuild": "^0.14.43",
     "express": "^4.18.1",

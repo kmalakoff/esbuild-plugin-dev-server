@@ -12,19 +12,21 @@ const server = createServer(app);
 const write = socketServer(server);
 server.listen(8001);
 
-esbuild.build({
-  entryPoints: ['src/client.tsx'],
-  bundle: true,
-  outfile: 'public/js/bundle.js',
-  banner: { js: client },
-  watch: true,
-  incremental: true,
-  plugins: [
-    {
-      name: 'build',
-      setup: (build) => build.onEnd(write),
-    },
-  ],
-});
+(async () => {
+  await esbuild.build({
+    entryPoints: ['client.tsx'],
+    bundle: true,
+    outfile: 'public/js/bundle.js',
+    banner: { js: client() },
+    watch: true,
+    incremental: true,
+    plugins: [
+      {
+        name: 'build',
+        setup: (build) => build.onEnd(write),
+      },
+    ],
+  });
 
-open('http://localhost:8001');
+  open('http://localhost:8001');
+})();

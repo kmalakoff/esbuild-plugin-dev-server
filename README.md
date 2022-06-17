@@ -13,3 +13,9 @@ esbuild.build({
   plugins: [devServer({ public: './public', port: 3000 })],
 });
 ```
+
+## Examples
+
+![glyph](https://media.giphy.com/media/MQ582WuZaCyAHfoNwx/giphy.gif)
+
+[code](https://github.com/kmalakoff/esbuild-plugin-dev-server/tree/master/examples)
