@@ -4,7 +4,9 @@ module.exports = function socketServer(server) {
   const connections = [];
   const sockjs = SockJS.createServer({
     prefix: '/esbuild',
-    log: () => {},
+    log: () => {
+      /* silent */
+    },
   });
   sockjs.installHandlers(server);
   sockjs.on('connection', (connection) => {

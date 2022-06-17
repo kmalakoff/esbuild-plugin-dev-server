@@ -9,17 +9,14 @@ module.exports = (options = {}) => {
   const port = options.port || process.env.PORT || 3000;
   const public = options.public || './public';
   const overlayHandler = errorOverlayMiddleware();
-  const isOveridable = (option) => option === undefined || !!option;
 
   return {
     name: 'dev-server',
-    setup(build) {
+    async setup(build) {
       // augment build options
       build.initialOptions.banner = build.initialOptions.banner || {};
-      build.initialOptions.banner.js = `${build.initialOptions.banner.js || ''};${client}`;
-      if (!isOveridable(build.initialOptions.incremental)) console.warn('esbuild incremental ovreridding to true for esbuild-plugin-dev-server serve');
-      build.initialOptions.incremental = true;
-      if (!isOveridable(build.initialOptions.watch)) console.warn('esbuild incremental ovreridding to true for esbuild-plugin-dev-server serve');
+      build.initialOptions.banner.js = `${build.initialOptions.banner.js || ''};${client()}`;
+      if (build.initialOptions.watch !== undefined && !build.initialOptions.watch) console.warn('warning: esbuild-plugin-dev-server is overriding esbuild watch');
       build.initialOptions.watch = true;
 
       const server = createServer((req, res) => {
@@ -32,8 +29,11 @@ module.exports = (options = {}) => {
           });
         });
       });
+
       build.onEnd(socketServer(server));
-      server.listen(port);
+      if (options.beforeListen) options.beforeListen(server);
+      await server.listen(port);
+      if (options.afterListen) options.afterListen(server);
     },
   };
 };

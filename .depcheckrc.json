@@ -1,0 +1,8 @@
+{
+  "parsers": {
+    "**/*.ts": "typescript",
+    "**/*.mjs": "es6",
+    "**/*.js": "es6"
+  },
+  "ignores": ["react", "react-dom"]
+}

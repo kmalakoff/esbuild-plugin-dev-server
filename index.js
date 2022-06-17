@@ -1,3 +1,3 @@
-module.exports = require('./lib/plugin');
-module.exports.socketServer = require('./lib/socketServer');
-module.exports.client = require('./lib/client');
+module.exports = require('./src/plugin');
+module.exports.socketServer = require('./src/socketServer');
+module.exports.client = require('./src/client');

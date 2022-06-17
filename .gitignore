@@ -1,3 +1,5 @@
 .DS_Store
-public/
+.tmp/
+**/*/public/*.js
+**/*/public/js/*.js
 node_modules/

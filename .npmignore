@@ -1,6 +1,9 @@
 .github/
 .vscode/
+.tmp/
 examples/
+test/
+.depcheckrc.json
 .eslintignore
 .eslintrc.json
 .prettierignore
