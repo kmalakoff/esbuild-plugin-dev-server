@@ -1,5 +1,11 @@
 .DS_Store
-.tmp/
+node_modules/
+
+# express and plugin
 **/*/public/*.js
 **/*/public/js/*.js
-node_modules/
+
+# electron
+**/*/app/
+**/*/dist/
+**/*/release/
