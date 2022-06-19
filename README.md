@@ -18,4 +18,6 @@ esbuild.build({
 
 ![glyph](https://media.giphy.com/media/MQ582WuZaCyAHfoNwx/giphy.gif)
 
-[code](https://github.com/kmalakoff/esbuild-plugin-dev-server/tree/master/examples)
+- [express](https://github.com/kmalakoff/esbuild-plugin-dev-server/tree/master/examples/express)
+- [electron](https://github.com/kmalakoff/esbuild-plugin-dev-server/tree/master/electron)
+- [plugin](https://github.com/kmalakoff/esbuild-plugin-dev-server/tree/master/plugin)

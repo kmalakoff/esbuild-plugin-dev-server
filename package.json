@@ -1,17 +1,20 @@
 {
   "name": "esbuild-plugin-dev-server",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Dev server for esbuild with live reload and error overlay",
   "keywords": [
     "dev",
     "server",
     "esbuild",
+    "plugin",
     "error",
     "overlay",
     "live",
     "reload",
     "react",
-    "typescript"
+    "typescript",
+    "express",
+    "electron"
   ],
   "homepage": "https://github.com/kmalakoff/esbuild-plugin-dev-server#README.md",
   "license": "MIT",

@@ -8,11 +8,11 @@
     "start": "node server.mjs"
   },
   "dependencies": {
-    "esbuild": "^0.14.43",
+    "esbuild": "^0.14.45",
     "express": "^4.18.1",
     "open": "^8.4.0",
-    "react": "^18.1.0",
+    "react": "^18.2.0",
     "react-dev-utils": "^12.0.1",
-    "react-dom": "^18.1.0"
+    "react-dom": "^18.2.0"
   }
 }
