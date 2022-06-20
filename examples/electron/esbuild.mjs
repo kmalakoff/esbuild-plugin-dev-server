@@ -2,10 +2,10 @@
 
 import fs from 'fs/promises';
 import path from 'path';
-import { exec } from 'child_process';
 import esbuild from 'esbuild';
 import devServer from 'esbuild-plugin-dev-server';
-import { inlineSource } from 'inline-source';
+import inline from 'html-inline-external';
+import electronmon from 'electronmon';
 
 import { URL } from 'url';
 const __dirname = new URL('.', import.meta.url).pathname;
@@ -19,6 +19,7 @@ const isServing = process.argv[2] === 'serve';
   await esbuild.build({
     platform: 'node',
     bundle: true,
+    minify: !isServing,
     watch: isServing,
     entryPoints: ['src/main/index.ts'],
     outfile: 'app/main.js',
@@ -37,6 +38,7 @@ const isServing = process.argv[2] === 'serve';
   await esbuild.build({
     target: 'chrome100',
     bundle: true,
+    minify: !isServing,
     watch: isServing,
     entryPoints: ['src/renderer/index.tsx'],
     outfile: 'app/renderer.js',
@@ -45,11 +47,10 @@ const isServing = process.argv[2] === 'serve';
   });
   await fs.copyFile('src/renderer/index.html', 'app/index.html');
   if (!isServing) {
-    // inline js
-    const html = await inlineSource('app/index.html', { compress: true, rootpath: path.join(__dirname, 'app') });
+    const html = await inline({ src: 'app/index.html' });
     fs.writeFile('app/index.html', html, 'utf8');
   }
 
   // launch electron
-  if (isServing) exec(`electron ${path.join(__dirname, 'app', 'main.js')}`);
+  if (isServing) electronmon({ cwd: path.join(__dirname, 'app'), args: ['main.js'] });
 })();
