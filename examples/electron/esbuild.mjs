@@ -27,8 +27,7 @@ const isServing = process.argv[2] === 'serve';
       {
         name: 'make-all-packages-external',
         setup(build) {
-          let filter = /^[^.\/]|^\.[^.\/]|^\.\.[^\/]/;
-          build.onResolve({ filter }, (args) => ({ path: args.path, external: true }));
+          build.onResolve({ filter: /^[^.\/]|^\.[^.\/]|^\.\.[^\/]/ }, (args) => ({ path: args.path, external: true }));
         },
       },
     ],
