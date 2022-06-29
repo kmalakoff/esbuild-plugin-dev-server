@@ -26,10 +26,10 @@
     "release": "npm run build && electron-builder"
   },
   "devDependencies": {
-    "electron": "^19.0.4",
-    "electron-builder": "^23.0.3",
-    "esbuild": "^0.14.46",
-    "esbuild-plugin-dev-server": "^1.1.0",
+    "electron": "^19.0.6",
+    "electron-builder": "^23.1.0",
+    "esbuild": "^0.14.47",
+    "esbuild-plugin-dev-server": "^1.1.2",
     "html-inline-external": "^1.0.9",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
