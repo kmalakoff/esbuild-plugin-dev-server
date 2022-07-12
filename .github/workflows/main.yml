@@ -11,8 +11,8 @@ jobs:
         node: ['latest']
         os: [ubuntu-latest, windows-latest, macOS-latest]
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2.4.1
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3.3.0
         with:
           node-version: ${{ matrix.node-version }}
       - run: git config --global user.name "Github Actions"
@@ -21,4 +21,4 @@ jobs:
       - run: npm ci
       - run: npx playwright install --with-deps
       - run: npm run lint
-      - run: npm nvu engines run test
+      - run: nvu engines npm run test

@@ -41,7 +41,7 @@ const isServing = process.argv[2] === 'serve';
     watch: isServing,
     entryPoints: ['src/renderer/index.tsx'],
     outfile: 'app/renderer.js',
-    publicPath: '/',
+    publicPath: isServing ? '/' : '',
     plugins: [isServing && devServer({ public: 'app', port: 3000 })].filter(Boolean),
   });
   await fs.copyFile('src/renderer/index.html', 'app/index.html');
