@@ -8,7 +8,7 @@
     "start": "node server.mjs"
   },
   "dependencies": {
-    "esbuild": "^0.14.45",
+    "esbuild": "^0.14.49",
     "open": "^8.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

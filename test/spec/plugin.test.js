@@ -2,7 +2,7 @@ const { chromium } = require('playwright');
 const assert = require('assert');
 
 const esbuild = require('esbuild');
-const devServer = require('../../index.js');
+const devServer = require('../..');
 const { createHttpTerminator } = require('http-terminator');
 
 const path = require('path');

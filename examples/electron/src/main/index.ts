@@ -7,14 +7,10 @@ const createWindow = () => {
   const mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
-    // webPreferences: {
-    //   preload: path.join(__dirname, 'preload.js')
-    // }
   });
 
   // and load the index.html of the app.
-  const appURL = app.isPackaged ? `file://${path.resolve(__dirname, 'index.html').split(path.sep).join('/')}` : 'http://localhost:3000';
-  mainWindow.loadURL(appURL);
+  app.isPackaged ? mainWindow.loadFile(path.join(__dirname, 'index.html')) : mainWindow.loadURL('http://localhost:3000');
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()

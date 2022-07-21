@@ -1,12 +1,29 @@
 {
   "name": "electron",
-  "productName": "Electron esbuild",
-  "description": "Example of Electron with esbuild",
   "version": "0.0.0",
   "private": true,
-  "author": "Your Name <your@email.com>",
+  "description": "Example of Electron with esbuild",
   "homepage": "http://your-homepage.com",
+  "author": "Your Name <your@email.com>",
   "main": "app/main.js",
+  "scripts": {
+    "build": "NODE_ENV=production ./esbuild.mjs build",
+    "postinstall": "electron-builder install-app-deps",
+    "release": "npm run build && electron-builder",
+    "start": "./esbuild.mjs serve"
+  },
+  "dependencies": {
+    "electronmon": "^2.0.2"
+  },
+  "devDependencies": {
+    "electron": "^19.0.8",
+    "electron-builder": "^23.1.0",
+    "esbuild": "^0.14.49",
+    "esbuild-plugin-dev-server": "^1.1.2",
+    "html-inline-external": "^1.0.9",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
   "build": {
     "appId": "com.example.esbuild-electron",
     "files": [
@@ -19,19 +36,5 @@
     },
     "publish": null
   },
-  "scripts": {
-    "postinstall": "electron-builder install-app-deps",
-    "build": "NODE_ENV=production ./esbuild.mjs build",
-    "start": "./esbuild.mjs serve",
-    "release": "./esbuild.mjs build && electron-builder"
-  },
-  "devDependencies": {
-    "electron": "^19.0.4",
-    "electron-builder": "^23.0.3",
-    "esbuild": "^0.14.46",
-    "esbuild-plugin-dev-server": "^1.1.0",
-    "inline-source": "^7.2.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  }
+  "productName": "Electron esbuild"
 }
