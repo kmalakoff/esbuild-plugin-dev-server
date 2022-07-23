@@ -25,6 +25,7 @@
     "lib"
   ],
   "scripts": {
+    "build": "",
     "format": "prettier --write .",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "test": "mocha test/spec/*.test.js --no-timeouts",
