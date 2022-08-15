@@ -1,5 +1,5 @@
 import esbuild from 'esbuild';
-import devServer from '../../lib/index.js';  // esbuild-plugin-dev-server
+import devServer from '../../lib/index.js'; // esbuild-plugin-dev-server
 import open from 'open';
 
 (async () => {
