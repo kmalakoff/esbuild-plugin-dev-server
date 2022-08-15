@@ -1,8 +1,12 @@
 {
   "parsers": {
-    "**/*.ts": "typescript",
-    "**/*.mjs": "es6",
-    "**/*.js": "es6"
+    "**/*.js": ["es6"],
+    "**/*.cjs": ["es6"],
+    "**/*.mjs": ["es6"],
+    "**/*.jsx": ["jsx"],
+    "**/*.json": ["json1", "json2"],
+    "**/*.ts": ["typescript"],
+    "**/*.tsx": ["typescript"]
   },
-  "ignores": ["react", "react-dom"]
+  "ignores": ["react", "react-dom", "serve-handler"]
 }
