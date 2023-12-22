@@ -1,6 +1,6 @@
 {
   "name": "esbuild-plugin-dev-server",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Dev server for esbuild with live reload and error overlay",
   "keywords": [
     "dev",
