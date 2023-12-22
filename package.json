@@ -17,7 +17,10 @@
     "electron"
   ],
   "homepage": "https://github.com/kmalakoff/esbuild-plugin-dev-server#README.md",
-  "repository": "kmalakoff/esbuild-plugin-dev-server",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kmalakoff/esbuild-plugin-dev-server.git"
+  },
   "license": "MIT",
   "author": "Kevin Malakoff <kmalakoff@gmail.com> (https://github.com/kmalakoff)",
   "main": "lib/index.js",
