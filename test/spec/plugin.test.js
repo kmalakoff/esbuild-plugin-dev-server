@@ -20,7 +20,7 @@ describe('plugin', () => {
   });
 
   let tmp;
-  let build;
+  let context;
   let terminator;
   let client;
   const clientReplace = (string) => client.replace('<div id="text">0</div>', `<div id="text">${string}</div>`);
@@ -28,17 +28,18 @@ describe('plugin', () => {
     tmp = path.join(process.cwd(), '.tmp');
     await fs.copy(path.join(__dirname, '..', 'data'), tmp);
     client = await fs.readFile(path.join(tmp, 'client.tsx'), 'utf8');
-    build = await esbuild.build({
+    context = await esbuild.context({
       absWorkingDir: tmp,
       entryPoints: ['client.tsx'],
       bundle: true,
       outfile: 'public/js/bundle.js',
       plugins: [devServer({ public: path.join(tmp, 'public'), port: PORT, beforeListen: (server) => (terminator = createHttpTerminator({ server })) })],
     });
+    context.watch();
   });
   afterEach(async () => {
     await terminator.terminate();
-    await build.stop();
+    await context.dispose();
     fs.remove(tmp);
   });
 
