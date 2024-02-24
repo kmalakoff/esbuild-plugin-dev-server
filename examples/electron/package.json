@@ -16,11 +16,11 @@
     "electronmon": "^2.0.2"
   },
   "devDependencies": {
-    "electron": "^19.0.8",
-    "electron-builder": "^23.1.0",
-    "esbuild": "^0.14.49",
-    "esbuild-plugin-dev-server": "^1.1.2",
-    "html-inline-external": "^1.0.9",
+    "electron": "^28.2.2",
+    "electron-builder": "^24.9.1",
+    "esbuild": "^0.20.0",
+    "esbuild-plugin-dev-server": "^4.0.0",
+    "html-inline-external": "^1.0.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
