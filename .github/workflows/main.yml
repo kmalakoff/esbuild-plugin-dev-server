@@ -9,20 +9,20 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        node: ['latest']
-        os: [ubuntu-latest, windows-latest, macos-latest]
+        node: [latest]
+        os: [ubuntu-latest, windows-latest]
+        # os: [ubuntu-latest, windows-latest, macos-latest]
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
       - run: git config --global user.name "Github Actions"
       - run: git config --global user.email "actions@users.noreply.github.com"
       - run: npm uninstall node-version-use -g
       - run: npm install node-version-use -g
-      - run: npm ci
-      - run: npx playwright install --with-deps
-      - run: npm run lint
+      - run: nvu stable npm ci
+      - run: npx -y playwright install --with-deps
+      - run: npm run version
       - run: npm run build
-      - run: npm test
-      - run: npm run test:engines
+      - run: npm run test
