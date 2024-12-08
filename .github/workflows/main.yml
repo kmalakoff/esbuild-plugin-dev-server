@@ -21,7 +21,7 @@ jobs:
       - run: git config --global user.email "actions@users.noreply.github.com"
       - run: npm uninstall node-version-use -g
       - run: npm install node-version-use -g
-      - run: nvu stable npm ci
+      - run: nvu 22 npm ci
       - run: npx -y playwright install --with-deps
       - run: npm run version
       - run: npm run build
