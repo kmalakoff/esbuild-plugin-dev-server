@@ -3,7 +3,9 @@ updates:
   - package-ecosystem: npm
     directory: '/'
     schedule:
-      interval: daily
+      interval: weekly
+      - dependency-name: '@types/mocha'
+      - dependency-name: '@types/node'
   - package-ecosystem: 'github-actions'
     directory: '/'
     schedule:
