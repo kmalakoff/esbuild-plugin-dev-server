@@ -1,5 +1,11 @@
 .DS_Store
 node_modules/
+dist/
+docs/
+npm-debug.log
+
+.tmp/
+playwright-report/
 
 # express and plugin
 **/*/public/*.js

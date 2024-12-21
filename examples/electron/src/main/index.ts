@@ -2,6 +2,8 @@
 const { app, BrowserWindow } = require('electron');
 const path = require('path');
 
+const __dirname = path.dirname(typeof __filename !== 'undefined' ? __filename : url.fileURLToPath(import.meta.url));
+
 const createWindow = () => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
