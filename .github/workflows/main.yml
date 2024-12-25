@@ -22,7 +22,7 @@ jobs:
       - run: npm install node-version-use -g
       - run: npm ci
       - run: npx playwright install --with-deps
-      - run: npm run lint
+      - run: npm run format
       - run: npm run build
       - run: npm test
       - run: npm run test:engines
