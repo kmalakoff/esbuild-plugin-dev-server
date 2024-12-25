@@ -1,0 +1,6 @@
+✘ [ERROR] Expected identifier but found "/"
+
+    client.tsx:4:35:
+      4 │ const App = () => <div id="text">{</div>;
+        ╵                                    ^
+
