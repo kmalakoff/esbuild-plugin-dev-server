@@ -1,0 +1,19 @@
+.DS_Store
+node_modules/
+dist/
+docs/
+npm-debug.log
+
+.tmp/
+.cache/
+playwright-report/
+test-results/
+
+# express and plugin
+**/*/public/*.js
+**/*/public/js/*.js
+
+# electron
+**/*/app/
+**/*/dist/
+**/*/release/
