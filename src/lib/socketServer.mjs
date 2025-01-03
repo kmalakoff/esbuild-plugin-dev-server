@@ -1,6 +1,6 @@
-const SockJS = require('sockjs');
+import SockJS from 'sockjs';
 
-module.exports = function socketServer(server) {
+export default function socketServer(server) {
   const connections = [];
   const sockjs = SockJS.createServer({
     prefix: '/esbuild',
@@ -17,4 +17,4 @@ module.exports = function socketServer(server) {
   return function write(result) {
     connections.forEach((res) => res.write(JSON.stringify(result)));
   };
-};
+}
