@@ -9,7 +9,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        node: ['lts/Jod']
+        node: ["latest"]
         os: [ubuntu-latest, windows-latest]
         # os: [ubuntu-latest, windows-latest, macos-latest]
     steps:
@@ -26,6 +26,8 @@ jobs:
       - run: npm run clean
       # - run: npm ci - not working due to binary incompatibilities - install without lockfile - https://github.com/npm/cli/issues/4828#issuecomment-2514987829
       - run: git checkout master -- package-lock.json
+      - run: npm install
+      - run: npx -y playwright install --with-deps
       - run: npm run docs
       - run: npm run build
       - run: npm run test
