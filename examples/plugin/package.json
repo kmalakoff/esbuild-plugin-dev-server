@@ -1,6 +1,7 @@
 {
-  "name": "plugin",
+  "name": "esbuild-plugin-dev-server-plugin",
   "version": "1.0.0",
+  "private": true,
   "description": "",
   "license": "MIT",
   "author": "Kevin Malakoff",
