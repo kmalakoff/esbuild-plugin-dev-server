@@ -1,1 +1,1 @@
-ignores: ["esbuild-plugin-dev-server", "@types/*", "@biomejs/*", "@types/react", "@types/react-dom", "react", "react-dom", "serve-handler"]
+ignores: ["esbuild-plugin-dev-server", "@types/react", "@types/react-dom", "react", "react-dom", "serve-handler"]
