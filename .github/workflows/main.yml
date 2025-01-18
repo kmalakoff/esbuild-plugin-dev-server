@@ -5,7 +5,7 @@ on:
       - master
 jobs:
   test:
-    name: Node.js ${{ matrix.node-version }} ${{ matrix.os }}
+    name: Node.js ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -24,4 +24,4 @@ jobs:
       - run: npm run build
       - run: tsds validate
       - run: npm run test
-      # - run: npm run test:engines
+      - run: npm run test:engines
