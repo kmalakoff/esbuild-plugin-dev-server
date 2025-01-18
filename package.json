@@ -51,6 +51,7 @@
     "esbuild": "*",
     "fs-extra": "*",
     "http-terminator": "*",
+    "install-optional": "^0.1.28",
     "react": "*",
     "react-dom": "*",
     "rimraf": "*"
