@@ -9,7 +9,6 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        node: ["latest"]
         os: [ubuntu-latest, windows-latest]
         # os: [ubuntu-latest, windows-latest, macos-latest]
     steps:
@@ -19,16 +18,10 @@ jobs:
           node-version: 'lts/Jod'
       - run: git config --global user.name "Github Actions"
       - run: git config --global user.email "actions@users.noreply.github.com"
-      - run: npm install ts-dev-stack node-version-use -g
-      - run: npm install depcheck -g
+      - run: npm install ts-dev-stack node-version-use depcheck @biomejs/biome -g -f
       - run: depcheck
-      - run: npm install homedir-polyfill
-      - run: npm run clean
-      # - run: npm ci - not working due to binary incompatibilities - install without lockfile - https://github.com/npm/cli/issues/4828#issuecomment-2514987829
-      - run: git checkout master -- package-lock.json
-      - run: npm install
-      - run: npx -y playwright install --with-deps
-      - run: npm run docs
+      - run: npm ci
       - run: npm run build
+      - run: tsds validate
       - run: npm run test
-      # - run: npm run test:engines
+      - run: npm run test:engines
