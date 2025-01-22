@@ -21,6 +21,7 @@ jobs:
       - run: npm install ts-dev-stack node-version-use depcheck @biomejs/biome -g -f
       - run: depcheck
       - run: npm ci
+      - run: npx -y playwright install --with-deps
       - run: npm run build
       - run: tsds validate
       - run: npm run test
