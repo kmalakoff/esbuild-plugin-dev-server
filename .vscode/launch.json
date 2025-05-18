@@ -4,20 +4,11 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "test:node (mac)",
-      "program": "/Users/kevin/.nvm/versions/node/v22.13.0/lib/node_modules/ts-dev-stack/bin/cli.cjs",
+      "name": "test:node",
+      "runtimeExecutable": "tsds",
       "args": ["test:node", "--no-timeouts"],
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen"
     },
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "test:node (windows)",
-      "program": "C:/Program Files (x86)/nodejs/node_modules/ts-dev-stack/bin/cli.cjs",
-      "args": ["test:node", "--no-timeouts"],
-      "console": "integratedTerminal",
-      "internalConsoleOptions": "neverOpen"
-    }
   ]
 }
