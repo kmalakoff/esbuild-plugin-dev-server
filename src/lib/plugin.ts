@@ -2,10 +2,17 @@ import { createServer } from 'http';
 import qs from 'querystring';
 import errorOverlayMiddleware from 'react-dev-utils/errorOverlayMiddleware';
 import staticHandler from 'serve-handler';
-import client from './client.mjs';
-import socketServer from './socketServer.mjs';
+import client from './client.js';
+import socketServer from './socketServer.js';
 
-export default (options = {}) => {
+import type { IncomingMessage } from 'http';
+import type { Options } from '../types.js';
+
+interface Request extends IncomingMessage {
+  query: object;
+}
+
+export default (options: Options = {}) => {
   const port = options.port || process.env.PORT || 3000;
   const publicFolder = options.public || './public';
   const overlayHandler = errorOverlayMiddleware();
@@ -17,7 +24,7 @@ export default (options = {}) => {
       build.initialOptions.banner = build.initialOptions.banner || {};
       build.initialOptions.banner.js = `${build.initialOptions.banner.js || ''};${client()}`;
 
-      const server = createServer((req, res) => {
+      const server = createServer((req: Request, res) => {
         const parts = req.url.split('?');
         req.query = parts.length > 1 ? qs.parse(parts[1]) : {};
         overlayHandler(req, res, () => {
