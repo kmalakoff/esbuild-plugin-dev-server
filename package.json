@@ -23,6 +23,14 @@
   },
   "license": "MIT",
   "author": "Kevin Malakoff <kmalakoff@gmail.com> (https://github.com/kmalakoff)",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    },
+    "./package.json": "./package.json"
+  },
   "main": "dist/cjs/index.js",
   "types": "dist/cjs/index.d.cts",
   "files": [
@@ -60,9 +68,6 @@
     "node": ">=16"
   },
   "tsds": {
-    "source": "src/index.ts",
-    "targets": [
-      "cjs"
-    ]
+    "source": "src/index.ts"
   }
 }
