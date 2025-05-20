@@ -7,8 +7,8 @@ import devServer from '../../lib/index.js'; // esbuild-plugin-dev-server
 import inline from 'html-inline-external';
 import electronmon from 'electronmon';
 
-import { URL } from 'url';
-const __dirname = new URL('.', import.meta.url).pathname;
+import url from 'url';
+const __dirname = path.dirname(typeof __filename !== 'undefined' ? __filename : url.fileURLToPath(import.meta.url));
 const isServing = process.argv[2] === 'serve';
 
 (async () => {
