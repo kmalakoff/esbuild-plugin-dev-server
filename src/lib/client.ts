@@ -1,6 +1,9 @@
 import fs from 'fs';
 import path from 'path';
-import endpoint from 'react-dev-utils/launchEditorEndpoint';
+import url from 'url';
+import endpoint from 'react-dev-utils/launchEditorEndpoint.js';
+
+const __dirname = path.dirname(typeof __filename !== 'undefined' ? __filename : url.fileURLToPath(import.meta.url));
 
 let string = null;
 export default function client() {
