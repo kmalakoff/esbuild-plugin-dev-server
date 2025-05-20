@@ -1,6 +1,6 @@
 import { createServer } from 'http';
 import qs from 'querystring';
-import errorOverlayMiddleware from 'react-dev-utils/errorOverlayMiddleware';
+import errorOverlayMiddleware from 'react-dev-utils/errorOverlayMiddleware.js';
 import staticHandler from 'serve-handler';
 import client from './client.js';
 import socketServer from './socketServer.js';

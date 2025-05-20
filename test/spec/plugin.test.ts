@@ -1,26 +1,29 @@
 // @ts-check
-const { test } = require('@playwright/test');
+import { test } from '@playwright/test';
 
-const assert = require('assert');
-const { installSync, removeSync } = require('install-optional');
+import assert from 'assert';
+import { installSync, removeSync } from 'install-optional';
 removeSync('esbuild', '@esbuild/');
 installSync('esbuild', `${process.platform}-${process.arch}`);
-const esbuild = require('esbuild');
+import esbuild, { type BuildContext } from 'esbuild';
 
 // @ts-ignore
-const devServer = require('esbuild-plugin-dev-server');
-const { createHttpTerminator } = require('http-terminator');
+import devServer from 'esbuild-plugin-dev-server';
+import { type HttpTerminator, createHttpTerminator } from 'http-terminator';
 
-const path = require('path');
-const fs = require('fs-extra');
-const { rimraf } = require('rimraf');
+import path from 'path';
+import fs from 'fs-extra';
+import { rimraf } from 'rimraf';
+
+import url from 'url';
+const __dirname = path.dirname(typeof __filename !== 'undefined' ? __filename : url.fileURLToPath(import.meta.url));
 
 const PORT = 5001;
 
-let tmp;
-let context;
-let terminator;
-let client;
+let tmp: string;
+let context: BuildContext;
+let terminator: HttpTerminator;
+let client: string;
 const clientReplace = (string) => client.replace('<div id="text">0</div>', `<div id="text">${string}</div>`);
 test.beforeEach(async () => {
   tmp = path.join(process.cwd(), '.tmp');
