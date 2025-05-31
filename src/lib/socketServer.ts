@@ -1,6 +1,7 @@
+import type { Server } from 'http';
 import SockJS from 'sockjs';
 
-export default function socketServer(server) {
+export default function socketServer(server: Server) {
   const connections = [];
   const sockjs = SockJS.createServer({
     prefix: '/esbuild',
@@ -14,7 +15,7 @@ export default function socketServer(server) {
     connection.on('close', () => connections.splice(connections.indexOf(connection), 1));
   });
 
-  return function write(result) {
+  return function write(result: unknown): undefined {
     connections.forEach((res) => res.write(JSON.stringify(result)));
   };
 }

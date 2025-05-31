@@ -1,5 +1,6 @@
 import { createServer } from 'http';
 import qs from 'querystring';
+import type { Plugin, PluginBuild } from 'esbuild';
 import errorOverlayMiddleware from 'react-dev-utils/errorOverlayMiddleware.js';
 import staticHandler from 'serve-handler';
 import client from './client.js';
@@ -12,14 +13,14 @@ interface Request extends IncomingMessage {
   query: object;
 }
 
-export default (options: Options = {}) => {
+export default (options: Options = {}): Plugin => {
   const port = options.port || process.env.PORT || 3000;
   const publicFolder = options.public || './public';
   const overlayHandler = errorOverlayMiddleware();
 
   return {
     name: 'dev-server',
-    async setup(build) {
+    async setup(build: PluginBuild): Promise<void> {
       // augment build options
       build.initialOptions.banner = build.initialOptions.banner || {};
       build.initialOptions.banner.js = `${build.initialOptions.banner.js || ''};${client()}`;
