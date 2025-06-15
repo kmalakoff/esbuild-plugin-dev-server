@@ -65,7 +65,7 @@
     "rimraf": "*"
   },
   "engines": {
-    "node": ">=16"
+    "node": ">=18"
   },
   "tsds": {
     "source": "src/index.ts"
