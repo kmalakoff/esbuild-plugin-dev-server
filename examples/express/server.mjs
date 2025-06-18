@@ -1,9 +1,9 @@
 import esbuild from 'esbuild';
 import express from 'express';
 import { createServer } from 'http';
-import { socketServer, client } from '../../lib/index.js'; // esbuild-plugin-dev-server
-import errorOverlayMiddleware from 'react-dev-utils/errorOverlayMiddleware.js';
 import open from 'open';
+import errorOverlayMiddleware from 'react-dev-utils/errorOverlayMiddleware.js';
+import { client, socketServer } from '../../lib/index.js'; // esbuild-plugin-dev-server
 
 const app = express({ strict: false });
 app.use(errorOverlayMiddleware());

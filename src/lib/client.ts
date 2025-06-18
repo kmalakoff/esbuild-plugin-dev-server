@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
-import url from 'url';
 import endpoint from 'react-dev-utils/launchEditorEndpoint.js';
+import url from 'url';
 
 const __dirname = path.dirname(typeof __filename !== 'undefined' ? __filename : url.fileURLToPath(import.meta.url));
 
