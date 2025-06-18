@@ -3,19 +3,21 @@ import { test } from '@playwright/test';
 
 import assert from 'assert';
 import { installSync, removeSync } from 'install-optional';
+
 removeSync('esbuild', '@esbuild/');
 installSync('esbuild', `${process.platform}-${process.arch}`);
+
 import esbuild, { type BuildContext } from 'esbuild';
 
 // @ts-ignore
 import devServer from 'esbuild-plugin-dev-server';
-import { type HttpTerminator, createHttpTerminator } from 'http-terminator';
-
-import path from 'path';
 import fs from 'fs-extra';
+import { createHttpTerminator, type HttpTerminator } from 'http-terminator';
+import path from 'path';
 import { rimraf } from 'rimraf';
 
 import url from 'url';
+
 const __dirname = path.dirname(typeof __filename !== 'undefined' ? __filename : url.fileURLToPath(import.meta.url));
 
 const PORT = 5001;
