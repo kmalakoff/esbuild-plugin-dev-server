@@ -1,7 +1,7 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.0.0/schema.json",
   "files": {
-    "ignore": ["test/data/**"]
+    "includes": ["**", "!dist/**", "!docs/**", "!examples/**", "!**/assets/**", "!.tmp/**", "!.vscode/**", "!test/data/**"]
   },
   "formatter": {
     "enabled": true,
@@ -22,6 +22,9 @@
         "noForEach": "off",
         "useOptionalChain": "off"
       },
+      "nursery": {
+        "useUniqueElementIds": "off"
+      },
       "correctness": {
         "noUnusedVariables": "warn",
         "noUnusedImports": "warn",
@@ -33,7 +36,15 @@
       "style": {
         "noParameterAssign": "off",
         "useNumberNamespace": "off",
-        "useNodejsImportProtocol": "off"
+        "useNodejsImportProtocol": "off",
+        "useAsConstAssertion": "error",
+        "useDefaultParameterLast": "error",
+        "useEnumInitializers": "error",
+        "useSelfClosingElements": "error",
+        "useSingleVarDeclarator": "error",
+        "noUnusedTemplateLiteral": "error",
+        "noInferrableTypes": "error",
+        "noUselessElse": "error"
       }
     }
   }

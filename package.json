@@ -42,7 +42,7 @@
     "build": "tsds build",
     "deploy": "tsds deploy",
     "docs": "tsds docs",
-    "format": "biome check --write --unsafe src/ test/",
+    "format": "biome check --write --unsafe",
     "test": "tsds link && npx playwright test && tsds unlink",
     "test:engines": "tsds link && nvu engines npx playwright test && tsds unlink",
     "version": "tsds version"

@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 
-import fs from 'fs/promises';
-import path from 'path';
-import esbuild from 'esbuild';
-import devServer from '../../lib/index.js'; // esbuild-plugin-dev-server
-import inline from 'html-inline-external';
 import electronmon from 'electronmon';
-
+import esbuild from 'esbuild';
+import fs from 'fs/promises';
+import inline from 'html-inline-external';
+import path from 'path';
 import url from 'url';
+import devServer from '../../lib/index.js'; // esbuild-plugin-dev-server
+
 const __dirname = path.dirname(typeof __filename !== 'undefined' ? __filename : url.fileURLToPath(import.meta.url));
 const isServing = process.argv[2] === 'serve';
 
@@ -27,7 +27,7 @@ const isServing = process.argv[2] === 'serve';
       {
         name: 'make-all-packages-external',
         setup(build) {
-          build.onResolve({ filter: /^[^.\/]|^\.[^.\/]|^\.\.[^\/]/ }, (args) => ({ path: args.path, external: true }));
+          build.onResolve({ filter: /^[^./]|^\.[^./]|^\.\.[^/]/ }, (args) => ({ path: args.path, external: true }));
         },
       },
     ],
