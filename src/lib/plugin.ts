@@ -1,13 +1,12 @@
+import type { Plugin, PluginBuild } from 'esbuild';
+import type { IncomingMessage } from 'http';
 import { createServer } from 'http';
 import qs from 'querystring';
-import type { Plugin, PluginBuild } from 'esbuild';
 import errorOverlayMiddleware from 'react-dev-utils/errorOverlayMiddleware.js';
 import staticHandler from 'serve-handler';
+import type { Options } from '../types.js';
 import client from './client.js';
 import socketServer from './socketServer.js';
-
-import type { IncomingMessage } from 'http';
-import type { Options } from '../types.js';
 
 interface Request extends IncomingMessage {
   query: object;
