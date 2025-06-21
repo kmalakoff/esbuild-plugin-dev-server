@@ -48,9 +48,9 @@
     "version": "tsds version"
   },
   "dependencies": {
-    "react-dev-utils": "^12.0.1",
-    "serve-handler": "^6.1.6",
-    "sockjs": "^0.3.24"
+    "react-dev-utils": "*",
+    "serve-handler": "*",
+    "sockjs": "*"
   },
   "devDependencies": {
     "@playwright/test": "*",
