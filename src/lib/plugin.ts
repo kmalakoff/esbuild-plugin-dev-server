@@ -4,9 +4,9 @@ import { createServer } from 'http';
 import qs from 'querystring';
 import errorOverlayMiddleware from 'react-dev-utils/errorOverlayMiddleware.js';
 import staticHandler from 'serve-handler';
-import type { Options } from '../types.js';
-import client from './client.js';
-import socketServer from './socketServer.js';
+import type { Options } from '../types.ts';
+import client from './client.ts';
+import socketServer from './socketServer.ts';
 
 interface Request extends IncomingMessage {
   query: object;
