@@ -1,6 +1,6 @@
 {
   "name": "electron",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": true,
   "description": "Example of Electron with esbuild",
   "homepage": "http://your-homepage.com",
@@ -16,13 +16,13 @@
     "electronmon": "^2.0.3"
   },
   "devDependencies": {
-    "electron": "^33.3.1",
-    "electron-builder": "^25.1.8",
-    "esbuild": "^0.24.2",
-    "esbuild-plugin-dev-server": "^4.1.0",
+    "electron": "^37.1.0",
+    "electron-builder": "^26.0.12",
+    "esbuild": "^0.25.5",
+    "esbuild-plugin-dev-server": "^4.1.24",
     "html-inline-external": "^1.0.10",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
   },
   "build": {
     "appId": "com.example.esbuild-electron",

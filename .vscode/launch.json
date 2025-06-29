@@ -6,7 +6,7 @@
       "request": "launch",
       "name": "test:node",
       "runtimeExecutable": "tsds",
-      "args": ["test:node", "--no-timeouts"],
+      "runtimeArgs": ["test:node", "--no-timeouts"],
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen"
     },
