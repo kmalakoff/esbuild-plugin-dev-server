@@ -19,7 +19,7 @@
     "electron": "^37.1.0",
     "electron-builder": "^26.0.12",
     "esbuild": "^0.25.5",
-    "esbuild-plugin-dev-server": "^4.1.24",
+    "esbuild-plugin-dev-server": "^4.2.0",
     "html-inline-external": "^1.0.10",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
