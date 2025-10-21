@@ -16,6 +16,8 @@ export default function socketServer(server: Server) {
   });
 
   return function write(result: unknown): undefined {
-    connections.forEach((res) => res.write(JSON.stringify(result)));
+    connections.forEach((res) => {
+      res.write(JSON.stringify(result));
+    });
   };
 }
