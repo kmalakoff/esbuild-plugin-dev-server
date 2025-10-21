@@ -13,16 +13,16 @@
     "start": "./esbuild.mjs serve"
   },
   "dependencies": {
-    "electronmon": "^2.0.3"
+    "electronmon": "*"
   },
   "devDependencies": {
-    "electron": "^37.1.0",
-    "electron-builder": "^26.0.12",
-    "esbuild": "^0.25.5",
-    "esbuild-plugin-dev-server": "^4.1.24",
-    "html-inline-external": "^1.0.10",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "electron": "*",
+    "electron-builder": "*",
+    "esbuild": "*",
+    "esbuild-plugin-dev-server": "*",
+    "html-inline-external": "*",
+    "react": "*",
+    "react-dom": "*"
   },
   "build": {
     "appId": "com.example.esbuild-electron",
