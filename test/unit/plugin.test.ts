@@ -9,7 +9,6 @@ installSync('esbuild', `${process.platform}-${process.arch}`);
 
 import esbuild, { type BuildContext } from 'esbuild';
 
-// @ts-ignore
 import devServer from 'esbuild-plugin-dev-server';
 import fs from 'fs-extra';
 import { createHttpTerminator, type HttpTerminator } from 'http-terminator';
