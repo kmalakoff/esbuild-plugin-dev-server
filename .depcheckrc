@@ -1,1 +1,1 @@
-ignores: ["node-version-use", "ts-dev-stack", "@biomejs/biome", "esbuild-plugin-dev-server", "@types/react", "@types/react-dom", "react", "react-dom", "serve-handler"]
+ignores: ["node-version-use", "ts-dev-stack", "esbuild-plugin-dev-server", "@types/react", "@types/react-dom", "react", "react-dom", "serve-handler"]

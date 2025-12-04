@@ -1,50 +1,6 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.3.8/schema.json",
+  "extends": ["tsds-config/biome.json"],
   "files": {
-    "includes": ["**", "!dist", "!docs", "!examples", "!assets", "!.tmp", "!.vscode", "!test/data"]
-  },
-  "formatter": {
-    "enabled": true,
-    "lineWidth": 320,
-    "indentStyle": "space"
-  },
-  "javascript": {
-    "formatter": {
-      "quoteStyle": "single",
-      "trailingCommas": "es5"
-    }
-  },
-  "linter": {
-    "enabled": true,
-    "rules": {
-      "recommended": true,
-      "complexity": {
-        "noForEach": "off",
-        "useOptionalChain": "off"
-      },
-      "nursery": {},
-      "correctness": {
-        "noUnusedVariables": "warn",
-        "noUnusedImports": "warn",
-        "noInnerDeclarations": "off",
-        "useUniqueElementIds": "off"
-      },
-      "performance": {
-        "noDelete": "off"
-      },
-      "style": {
-        "noParameterAssign": "off",
-        "useNumberNamespace": "off",
-        "useNodejsImportProtocol": "off",
-        "useAsConstAssertion": "error",
-        "useDefaultParameterLast": "error",
-        "useEnumInitializers": "error",
-        "useSelfClosingElements": "error",
-        "useSingleVarDeclarator": "error",
-        "noUnusedTemplateLiteral": "error",
-        "noInferrableTypes": "error",
-        "noUselessElse": "error"
-      }
-    }
+    "includes": ["**", "!dist", "!node_modules", "!.git", "!docs", "!examples", "!assets", "!.tmp", "!.vscode", "!test/data"]
   }
 }
