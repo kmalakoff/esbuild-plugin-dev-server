@@ -42,7 +42,7 @@
   "scripts": {
     "build": "tsds build",
     "docs": "tsds docs",
-    "format": "biome check --write --unsafe",
+    "format": "tsds format",
     "prepublishOnly": "tsds validate",
     "test": "tsds link && npx playwright test && tsds unlink",
     "test:engines": "tsds link && nvu engines npx playwright test && tsds unlink",
@@ -54,7 +54,6 @@
     "sockjs": "*"
   },
   "devDependencies": {
-    "@biomejs/biome": "*",
     "@playwright/test": "*",
     "@types/mocha": "*",
     "@types/node": "*",
@@ -66,7 +65,8 @@
     "react": "*",
     "react-dom": "*",
     "rimraf": "*",
-    "ts-dev-stack": "*"
+    "ts-dev-stack": "*",
+    "tsds-config": "*"
   },
   "engines": {
     "node": ">=18"
