@@ -60,7 +60,7 @@
     "esbuild": "^0.27.1",
     "fs-extra": "^11.3.2",
     "http-terminator": "^3.2.0",
-    "install-optional": "^1.0.18",
+    "install-optional": "^1.0.19",
     "node-version-use": "^2.1.5",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
