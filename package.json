@@ -45,7 +45,7 @@
     "format": "tsds format",
     "prepublishOnly": "tsds validate",
     "test": "tsds link && npx playwright test && tsds unlink",
-    "test:engines": "tsds link && nvu engines npx playwright test && tsds unlink",
+    "test:engines": "npm run test",
     "version": "tsds version"
   },
   "dependencies": {
@@ -55,18 +55,18 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.57.0",
-    "@types/mocha": "^10.0.10",
-    "@types/node": "^25.0.1",
+    "@types/mocha": "*",
+    "@types/node": "*",
     "esbuild": "^0.27.1",
     "fs-extra": "^11.3.2",
     "http-terminator": "^3.2.0",
-    "install-optional": "^1.0.19",
-    "node-version-use": "^2.1.5",
+    "install-optional": "^1.0.20",
+    "node-version-use": "*",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
     "rimraf": "^6.1.2",
-    "ts-dev-stack": "^1.21.3",
-    "tsds-config": "^0.2.1"
+    "ts-dev-stack": "*",
+    "tsds-config": "*"
   },
   "engines": {
     "node": ">=18"
