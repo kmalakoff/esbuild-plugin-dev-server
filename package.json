@@ -55,9 +55,12 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.57.0",
+    "@types/fs-extra": "^11.0.4",
     "@types/mocha": "*",
     "@types/node": "*",
-    "esbuild": "^0.27.1",
+    "@types/serve-handler": "^6.1.4",
+    "@types/sockjs": "^0.3.36",
+    "esbuild": "^0.28.0",
     "fs-extra": "^11.3.2",
     "http-terminator": "^3.2.0",
     "install-optional": "^1.0.20",
