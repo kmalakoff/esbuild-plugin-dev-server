@@ -5,7 +5,7 @@ import url from 'url';
 
 const __dirname = path.dirname(typeof __filename !== 'undefined' ? __filename : url.fileURLToPath(import.meta.url));
 
-let string = null;
+let string: string | null = null;
 export default function client(): string {
   if (string) return string;
   string = fs.readFileSync(path.join(__dirname, '..', '..', '..', 'assets', 'client.cjs'), 'utf8');
