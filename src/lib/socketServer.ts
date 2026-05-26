@@ -1,8 +1,13 @@
 import type { Server } from 'http';
 import SockJS from 'sockjs';
 
+interface Connection {
+  write(data: string): void;
+  on(event: 'close', callback: () => void): void;
+}
+
 export default function socketServer(server: Server) {
-  const connections = [];
+  const connections: Connection[] = [];
   const sockjs = SockJS.createServer({
     prefix: '/esbuild',
     log: () => {
@@ -11,8 +16,9 @@ export default function socketServer(server: Server) {
   });
   sockjs.installHandlers(server);
   sockjs.on('connection', (connection) => {
-    connections.push(connection);
-    connection.on('close', () => connections.splice(connections.indexOf(connection), 1));
+    const conn = connection as Connection;
+    connections.push(conn);
+    conn.on('close', () => connections.splice(connections.indexOf(conn), 1));
   });
 
   return function write(result: unknown): void {

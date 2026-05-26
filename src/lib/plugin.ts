@@ -24,9 +24,9 @@ export default (options: Options = {}): Plugin => {
       build.initialOptions.banner = build.initialOptions.banner || {};
       build.initialOptions.banner.js = `${build.initialOptions.banner.js || ''};${client()}`;
 
-      const server = createServer((req: Request, res) => {
-        const parts = req.url.split('?');
-        req.query = parts.length > 1 ? qs.parse(parts[1]) : {};
+      const server = createServer((req, res) => {
+        const parts = (req.url ?? '').split('?');
+        (req as Request).query = parts.length > 1 ? qs.parse(parts[1]) : {};
         overlayHandler(req, res, () => {
           staticHandler(req, res, {
             public: publicFolder,
