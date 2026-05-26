@@ -25,7 +25,7 @@ let tmp: string;
 let context: BuildContext;
 let terminator: HttpTerminator;
 let client: string;
-const clientReplace = (string) => client.replace('<div id="text">0</div>', `<div id="text">${string}</div>`);
+const clientReplace = (string: string) => client.replace('<div id="text">0</div>', `<div id="text">${string}</div>`);
 test.beforeEach(async () => {
   tmp = path.join(process.cwd(), '.tmp');
   await fs.copy(path.join(__dirname, '..', 'data'), tmp);
