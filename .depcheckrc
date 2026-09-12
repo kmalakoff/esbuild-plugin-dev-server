@@ -1,1 +1,1 @@
-ignores: ["node-version-use", "ts-dev-stack", "esbuild-plugin-dev-server", "@types/react", "@types/react-dom", "react", "react-dom", "serve-handler"]
+ignores: ["esbuild-plugin-dev-server", "node-version-use", "ts-dev-stack", "@types/react", "@types/react-dom", "react", "react-dom", "serve-handler"]
