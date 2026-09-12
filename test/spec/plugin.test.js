@@ -2,6 +2,9 @@
 const { test } = require('@playwright/test');
 
 const assert = require('assert');
+const { installSync, removeSync } = require('install-optional');
+removeSync('esbuild', '@esbuild/');
+installSync('esbuild', `${process.platform}-${process.arch}`);
 const esbuild = require('esbuild');
 
 // @ts-ignore
