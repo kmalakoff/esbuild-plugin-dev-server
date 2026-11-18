@@ -1,16 +1,14 @@
-const { test } = require('@playwright/test');
-
 const assert = require('assert');
 const { default: plugin, client, socketServer } = require('esbuild-plugin-dev-server');
 
-test.describe('exports .cjs', () => {
-  test('default', () => {
+describe('exports .cjs', () => {
+  it('default', () => {
     assert.equal(typeof plugin, 'function');
   });
-  test('client', () => {
+  it('client', () => {
     assert.equal(typeof client, 'function');
   });
-  test('socketServer', () => {
+  it('socketServer', () => {
     assert.equal(typeof socketServer, 'function');
   });
 });

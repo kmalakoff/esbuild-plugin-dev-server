@@ -44,12 +44,14 @@
     "docs": "tsds docs",
     "format": "tsds format",
     "prepublishOnly": "tsds validate",
-    "test": "tsds link && npx playwright test && tsds unlink",
-    "test:engines": "npm run test",
+    "test": "npm run test:browser && npm run test:node",
+    "test:browser": "tsds link && npx playwright test test/integration/plugin.test.ts test/exports/import.test.ts test/exports/import.test.mjs && tsds unlink",
+    "test:engines": "npm run build && npm run test:browser && nvu engines tsds test:node --no-timeouts test/exports/require.test.cjs test/integration/devServer.test.cjs",
+    "test:node": "tsds test:node --no-timeouts test/exports/require.test.cjs test/integration/devServer.test.cjs",
     "version": "tsds version"
   },
   "dependencies": {
-    "react-dev-utils": "^12.0.1",
+    "launch-editor": "^2.14.2",
     "serve-handler": "^6.1.6",
     "sockjs": "^0.3.24"
   },
@@ -62,6 +64,7 @@
     "@types/sockjs": "^0.3.36",
     "esbuild": "^0.28.0",
     "fs-extra": "^11.3.2",
+    "fs-remove-compat": "^1.1.1",
     "http-terminator": "^3.2.0",
     "install-optional": "^1.0.20",
     "node-version-use": "*",

@@ -12,7 +12,7 @@
 
     var SockJS = window.SockJS;
     var reo = window.ReactErrorOverlay;
-    var launchEditorEndpoint = require('react-dev-utils/launchEditorEndpoint');
+    var launchEditorEndpoint = '__EDITOR_ENDPOINT__';
 
     // enable reporting
     reo.setEditorHandler((location) => {
