@@ -8,7 +8,6 @@
   "main": "app/main.js",
   "scripts": {
     "build": "NODE_ENV=production ./esbuild.mjs build",
-    "postinstall": "electron-builder install-app-deps",
     "release": "npm run build && electron-builder",
     "start": "./esbuild.mjs serve"
   },
@@ -16,10 +15,9 @@
     "electronmon": "^2.0.3"
   },
   "devDependencies": {
-    "electron": "^33.4.11",
-    "electron-builder": "^25.1.8",
-    "esbuild": "^0.24.2",
-    "esbuild-plugin-dev-server": "^4.1.16",
+    "electron": "^45.0.0",
+    "electron-builder": "^26.0.0",
+    "esbuild": "^0.28.0",
     "html-inline-external": "^1.0.10",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
@@ -36,5 +34,9 @@
     },
     "publish": null
   },
-  "productName": "Electron esbuild"
+  "productName": "Electron esbuild",
+  "allowScripts": {
+    "electron-winstaller": true,
+    "esbuild": true
+  }
 }

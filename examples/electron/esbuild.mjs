@@ -6,7 +6,7 @@ import fs from 'fs/promises';
 import inline from 'html-inline-external';
 import path from 'path';
 import url from 'url';
-import devServer from '../../lib/index.js'; // esbuild-plugin-dev-server
+import devServer from '../../dist/esm/index.js'; // esbuild-plugin-dev-server (built output)
 
 const __dirname = path.dirname(typeof __filename !== 'undefined' ? __filename : url.fileURLToPath(import.meta.url));
 const isServing = process.argv[2] === 'serve';
@@ -16,11 +16,10 @@ const isServing = process.argv[2] === 'serve';
   await fs.mkdir('app');
 
   // main
-  await esbuild.build({
+  const main = await esbuild.context({
     platform: 'node',
     bundle: true,
     minify: !isServing,
-    watch: isServing,
     entryPoints: ['src/main/index.ts'],
     outfile: 'app/main.js',
     plugins: [
@@ -32,18 +31,27 @@ const isServing = process.argv[2] === 'serve';
       },
     ],
   });
+  if (isServing) await main.watch();
+  else {
+    await main.rebuild();
+    await main.dispose();
+  }
 
   // renderer
-  await esbuild.build({
+  const renderer = await esbuild.context({
     target: 'chrome100',
     bundle: true,
     minify: !isServing,
-    watch: isServing,
     entryPoints: ['src/renderer/index.tsx'],
     outfile: 'app/renderer.js',
     publicPath: isServing ? '/' : '',
     plugins: [isServing && devServer({ public: 'app', port: 3000 })].filter(Boolean),
   });
+  if (isServing) await renderer.watch();
+  else {
+    await renderer.rebuild();
+    await renderer.dispose();
+  }
   await fs.copyFile('src/renderer/index.html', 'app/index.html');
   if (!isServing) {
     const html = await inline({ src: 'app/index.html' });
