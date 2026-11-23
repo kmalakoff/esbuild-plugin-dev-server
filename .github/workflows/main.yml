@@ -3,10 +3,6 @@ on:
   push:
     branches:
       - master
-  pull_request:
-    branches:
-      - master
-  workflow_dispatch:
 jobs:
   test:
     name: Node.js ${{ matrix.os }}
@@ -23,12 +19,7 @@ jobs:
       - run: git config --global user.name "Github Actions"
       - run: git config --global user.email "actions@users.noreply.github.com"
       - run: npm ci
-      - name: Install browsers
-        run: node node_modules/playwright/cli.js install --with-deps chromium
-        if: runner.os == 'Linux'
-      - name: Install browsers
-        run: node node_modules/playwright/cli.js install chromium
-        if: runner.os == 'Windows'
+      - run: npx -y playwright install --with-deps
       - run: npm run prepublishOnly
       - run: npm run test
       - run: npm run test:engines
